@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JavaScriptサンプル</title>
+</head>
+
+<body>
+<h1>BMIの計算</h1>
+<p>体重 kg：<input type="text" id="weight"></p>
+<p>身長 cm：<input type="text" id="height"></p>
+<p><button onclick="bmi()">計算</button></p>
+<p id="result"></p>
+<script type="text/javascript">
+function bmi(){
+	var w = parseFloat(document.getElementById("weight").value);
+	var h = parseFloat(document.getElementById("height").value/100);
+	var bmi = Math.floor(w/(h*h));
+	var answer = document.getElementById('result');
+	answer.innerHTML = "<p>身長"+h*100+"cm</p>"+"<p>体重"+ w + "kg</p>" + "BMI="+bmi;
+}
+</script>
+</body>
+</html>
